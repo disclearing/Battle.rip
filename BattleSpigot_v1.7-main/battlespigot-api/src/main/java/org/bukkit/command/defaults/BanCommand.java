@@ -1,0 +1,43 @@
+package org.bukkit.command.defaults;
+
+import com.google.common.collect.ImmutableList;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.Validate;
+import org.bukkit.BanList;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+import java.util.List;
+
+public class BanCommand extends VanillaCommand {
+    public BanCommand() {
+        super("ban");
+        this.description = "Prevents the specified player from using this server";
+        this.usageMessage = "/ban <player> [reason ...]";
+        this.setPermission("bukkit.command.ban.player");
+    }
+
+    @Override
+    public boolean execute(CommandSender sender, String currentAlias, String[] args) {
+        if (!testPermission(sender)) return true;
+        if (args.length == 0) {
+            ((Player) sender).undisguise();
+            sender.sendMessage(ChatColor.RED + "Usage: " + usageMessage);
+            return false;
+        }
+
+        String reason = args.length > 0 ? StringUtils.join(args, ' ', 1, args.length) : null;
+        Bukkit.getBanList(BanList.Type.NAME).addBan(args[0], reason, null, sender.getName());
+
+        Player player = Bukkit.getPlayer(args[0]);
+        if (player != null) {
+            player.kickPlayer("Banned by admin.");
+        }
+
+        Command.broadcastCommandMessage(sender, "Banned player " + args[0]);
+        return true;
+    }
+}

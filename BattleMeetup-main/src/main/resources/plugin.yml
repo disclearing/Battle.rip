@@ -1,0 +1,35 @@
+name: Meetup
+main: cc.stormworth.meetup.Meetup
+version: 1.0
+authors:
+  - xeezow
+  - Raidor
+  - OpaqueEclipse
+depend:
+  - Core
+commands:
+  config:
+    aliases: [ configuration, info, explain ]
+  invsee:
+    aliases: [ inv, inventory, seeinv, seeinventory, uinv ]
+  editkit:
+    aliases: [ kiteditor, editor, savekit, save ]
+  list:
+  scenarios:
+  team:
+  teaminventory:
+    aliases: [ ti, backpack, bp ]
+  forcestart:
+    aliases: [ start ]
+  stats:
+    aliases: [ playerstats, stat, statistics ]
+  reroll:
+    aliases: [ rr, re, newkit, rerolls ]
+  leaderboard:
+    aliases: [ leaderboards, lb, board, statstop, topstats, top ]
+  health:
+    aliases: [ h, hearts, hp ]
+  gamestyle:
+    aliases: [ matchstyle, style, gamemode, mode, uhc, hcf ]
+  addstats:
+  setrotativehologram:

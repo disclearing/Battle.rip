@@ -1,0 +1,6 @@
+main: rip.battle.crates.Crates
+name: Crates
+version: 1.0.0
+author: EnzoL_
+depend:
+  - Core

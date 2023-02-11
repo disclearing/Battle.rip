@@ -1,0 +1,10 @@
+Server:
+  Region: 'Europe'
+  Name: 'EU-MEETUP-01'
+Game:
+  Mode: 'FFA'
+Locations:
+  Spawn-Location: '#w;world:#x;0.5:#y;100.0:#z;0.5:#p;0.0:#yaw;0.0'
+  Top-Kills-Location: "#w;world:#x;32:#y;100.0:#z;0.5:#p;0.0:#yaw;0.0"
+  Top-Deaths-Location: "#w;world:#x;40:#y;100.0:#z;0.5:#p;0.0:#yaw;0.0"
+  Top-Elo-Location: "#w;world:#x;48:#y;100.0:#z;0.5:#p;0.0:#yaw;0.0"

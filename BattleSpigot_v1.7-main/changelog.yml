@@ -1,0 +1,40 @@
++Removed some blocks particles
++Furnace, redstone, brewingstand and some other blocks will not work with chunk unloaded
++Added EnderPearlLandEvent
++Removed Ender eye and enderchest animation
++added potion limiter and use blocker
++remove particles when player eat
++added mobstacker
++mined blocks goes to the inventory
++mob drops goes to the inventory.
++removed that sapling block grow up with bone meal
++fixed some things with enderpearls
++disabled weather in WorldServer class at private void Y() && o() at World class
++added disablePlayerMoveEvent, disableLeftClickAirEvent, disableLeftClickBlockEvent, disableNearbyChunkLoading, disabledTickingChunks, disableBiomeCacheCleanup
++removed doMobSpawning gamerule
++added options activationRange, isImportantEntity(), isEntityAllowedToBeDeleted() and getEntityDeleteRange() at lSpigot
++remove metrics
++removed movewrongly message
++removed particles at Explosion class
++now BlockDragonEgg don't get teleported
++modified entityenderman class
++fixed arrow detection
++math library changed to fastmath
++cleaned tileentityhopper
++cleaned tileentitychest
++fixed versioning
++added freezeentities
++WorldMap Memory Leak Patch 
++Added BlockPosition (1.8)
++Added BaseBlockPosition (1.8)
++Added EnumDirection (1.8)
++INamable (1.8)
++INamableTileEntity (1.8)
++Update PacketPlayOutPlayerInfo.java
++Update PaperSpigotConfig.java
++Taco Spigot Stuff
++World code Changes
++Modified EntityLiving class
++Fixed removeAll() entities lagspike
++modified network manager class
++reverted server ping

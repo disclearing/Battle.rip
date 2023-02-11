@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.contrum</groupId>
+    <artifactId>BattleHub</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <name>BattleHub</name>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>dmulloy2-repo</id>
+            <url>https://repo.dmulloy2.net/repository/public/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>rip.battle.spigot</groupId>
+            <artifactId>battle-server</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/Spigot.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>rip.battle.entity</groupId>
+            <artifactId>BattleEntity</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/BattleEntity.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>fr.mrmicky</groupId>
+            <artifactId>FastInv</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.contrum</groupId>
+            <artifactId>BattleAPI</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/BattleAPI.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.contrum</groupId>
+            <artifactId>BattleBukkit</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/BattleBukkit.jar</systemPath>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jonahseguin</groupId>
+            <artifactId>drink</artifactId>
+            <version>1.0.4</version> <!-- At time of writing, 1.0.4 is latest version.  See the pom.xml for the latest version -->
+            <scope>system</scope> <!-- Change scope to 'provided' if you are running drink as a plugin rather than shading it -->
+            <systemPath>${project.basedir}/libs/drink.jar</systemPath>
+        </dependency>
+
+    </dependencies>
+
+
+    <build>
+        <defaultGoal>clean install</defaultGoal>
+        <finalName>${project.name}</finalName>
+        <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+        <resources>
+            <resource>
+                <targetPath>.</targetPath>
+                <filtering>true</filtering>
+                <directory>${basedir}/src/main/resources/</directory>
+                <includes>
+                    <include>*.yml</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

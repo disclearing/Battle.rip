@@ -1,0 +1,5 @@
+name: BattleHub
+main: cc.stormworth.lobby.LobbyPlugin
+version: ${project.version}
+depend: [BattleCore]
+authors: [PomXML, and by Maaxxxi the useless fat spakka]

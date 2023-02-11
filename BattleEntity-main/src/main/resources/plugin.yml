@@ -1,0 +1,6 @@
+main: rip.battle.entity.EntityPlugin
+name: BattleEntity
+version: 1.0
+author: EnzoL_
+depend:
+  - BattleCore

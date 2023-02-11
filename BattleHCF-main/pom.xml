@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>cc.stormworth.hcf</groupId>
+  <artifactId>hcf</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>HCF</name>
+
+  <properties>
+    <storm.mavenLevel>storm-high</storm.mavenLevel>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>8</maven.compiler.release>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <executions>
+          <!-- Replacing default-compile as it is treated specially by maven -->
+          <execution>
+            <id>default-compile</id>
+            <phase>none</phase>
+          </execution>
+          <!-- Replacing default-testCompile as it is treated specially by maven -->
+          <execution>
+            <id>default-testCompile</id>
+            <phase>none</phase>
+          </execution>
+          <execution>
+            <id>java-compile</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>java-test-compile</id>
+            <phase>test-compile</phase>
+            <goals>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
+
+  <dependencies>
+
+    <!-- SPIGOT -->
+    <dependency>
+      <groupId>rip.battle.spigot</groupId>
+      <artifactId>battlespigot-server</artifactId>
+      <version>1.7.10-R0.1-SNAPSHOT</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/lib/Spigot.jar</systemPath>
+    </dependency>
+
+    <!-- CORE -->
+    <dependency>
+      <groupId>rip.battle.core</groupId>
+      <artifactId>bukkit</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/lib/core-bukkit.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>rip.battle.crates</groupId>
+      <artifactId>BattleCrates</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/lib/BattleCrates-1.0-SNAPSHOT.jar</systemPath>
+    </dependency>
+
+    <!-- LunarClient -->
+    <dependency>
+      <groupId>com.lunarclient</groupId>
+      <artifactId>LunarClientAPI</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/lib/bukkitapi.jar</systemPath>
+    </dependency>
+
+    <!-- WORLD-EDIT -->
+    <dependency>
+      <groupId>com.sk89q.worldedit</groupId>
+      <artifactId>worldedit-bukkit</artifactId>
+      <version>6.1.5</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/lib/worldedit-6.1.5-SNAPSHOT-bukkit.jar</systemPath>
+    </dependency>
+
+  </dependencies>
+</project>

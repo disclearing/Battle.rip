@@ -1,0 +1,8 @@
+mongo:
+  host: localhost
+  port: 27017
+  database: "battlerip"
+  authentication:
+    enabled: false
+    username: "admin"
+    password: "admin"
